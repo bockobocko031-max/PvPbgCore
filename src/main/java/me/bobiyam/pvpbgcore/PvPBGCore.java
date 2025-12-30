@@ -44,11 +44,15 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
 
     private final Map<UUID, Long> homeCooldowns = new HashMap<>();
 
+    private EventManager eventManager;
+
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         cfg = getConfig();
+        eventManager = new EventManager(this);
+        getCommand("event").setExecutor(new EventCommand(this, eventManager));
         getCommand("customenchant").setExecutor(new me.bobiyam.pvpbgcore.CustomEnchantCommand(this));
         getCommand("discord").setExecutor(new me.bobiyam.pvpbgcore.DiscordCommand(this));
 
@@ -85,11 +89,19 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
     }
 
     @Override
-    public void onDisable() {}
+    public void onDisable() {
+        if (eventManager != null) {
+            eventManager.stopEvent();
+        }
+    }
 
     private String color(String text) {
         if (text == null) return "§cMessage not found";
         return text.replace("&", "§");
+    }
+
+    public EventManager getEventManager() {
+        return eventManager;
     }
 
     @Override
