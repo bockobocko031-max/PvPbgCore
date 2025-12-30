@@ -1,0 +1,105 @@
+name: PvPBGCore
+version: '1.1'
+main: me.bobiyam.pvpbgcore.PvPBGCore
+
+commands:
+  menu:
+    description: Opens the server menu
+    usage: /menu
+  killstreak:
+    description: Shows your current killstreak
+    usage: /killstreak
+  pvpbgcore:
+    description: Core plugin command
+    usage: /pvpbgcore reload
+  staffmode:
+    description: StaffMode
+    usage: /staffmode
+  staffchat:
+    description: Send message to Staff Chat
+    usage: /staffchat <message>
+    aliases:
+      - sc
+  spawn:
+    description: go to spawn
+    usage: /spawn
+  setspawn:
+    description: setspawn
+    usage: /setspawn
+  spawnenchantnpc:
+    description: Spawn the enchanting villager (GUI)
+    usage: /spawnenchantnpc
+  discord:
+    description: Get the discord link
+    usage: /discord
+  customenchant:
+    description: Attempt to upgrade a random armor piece with Protection III to Protection IV
+    usage: /customenchant
+  setSSROOM:
+    description: Set the SS room location
+    usage: /setSSROOM
+  setssspawn:
+    description: Set the spawn location
+    usage: /setssspawn
+  ss:
+    description: Screenshare a player
+    usage: /ss <player>
+  unss:
+    description: Stop screenshare
+    usage: /unss <player>
+  wand:
+    description: Get the staff wand
+    usage: /pvpbgcore wand
+
+permissions:
+  pvpbgcore.staffmode:
+    description: StaffMode
+    default: op
+  pvpbgcore.menu:
+    description: Allows opening the menu
+    default: true
+  pvpbgcore.ranks:
+    description: Access ranks
+    default: true
+  pvpbgcore.vote:
+    description: Access vote
+    default: true
+  pvpbgcore.killstreak:
+    description: Allows using /killstreak
+    default: true
+  pvpbgcore.reload:
+    description: Reloading CorePlugin
+    default: op
+  pvpbgcore.staffchat:
+    description: Access to staff chat
+    default: op
+  pvpbgcore.setspawn:
+    description: setspawn2
+    default: op
+  pvpbgcore.spawn:
+    description: spawn
+    default: true
+  pvpbgcore.enchantnpc:
+    description: spawn enchant npc
+    default: op
+  pvpbgcore.discord:
+    description: Access to discord link
+    default: true
+  pvpbgcore.customenchant:
+    description: Use custom enchant command
+    default: op
+  ss.setSS:
+    description: Permission to set SS room
+    default: op
+  ss.setspawn:
+    description: Permission to set spawn
+    default: op
+  ss.screanshare:
+    description: Permission to screenshare
+    default: op
+  ss.stopss:
+    description: Permission to stop screenshare
+    default: op
+  pvpbgcore.wand:
+    description: Use the wand
+    default: op

@@ -1,0 +1,159 @@
+prefix: "&cPvPBG &f> "
+menu-size: 27
+menu-title: "                 &cGlobal Menu"
+items:
+  ranks:
+    slot: 11
+    material: DIAMOND
+    name: "&6Ranks"
+    command: "ranks"
+    permission: "pvpbgcore.ranks"
+    data: 0
+  vote:
+    slot: 12
+    material: EMERALD
+    name: "&aVote"
+    command: "vote"
+    permission: "pvpbgcore.vote"
+    data: 0
+  wild:
+    slot: 13
+    material: GRASS
+    name: "&2Wild"
+    command: "wild"
+    permission: "pvpbgcore.wild"
+    data: 0
+  warp:
+    slot: 14
+    material: ENDER_PEARL
+    name: "&bWarps"
+    command: "warps"
+    permission: "pvpbgcore.warps"
+    data: 0
+  kit:
+    slot: 15
+    material: CHEST
+    name: "&eKits"
+    command: "kit"
+    permission: "pvpbgcore.kits"
+    data: 0
+
+border:
+  enabled: true
+  name: "&amc.pvpbulgaria.eu"
+  material: STAINED_GLASS_PANE
+  data: 14  # черно
+
+killstreaks:
+  enabled: true
+  rewards:
+    "3":
+      message: "&a%player% достигна 3 поредни убийства и получава награда!"
+      commands:
+        - "give %player% IRON_SWORD 1"
+    "5":
+      message: "&6%player% достигна 5 поредни убийства! Бонус!"
+      commands:
+        - "give %player% DIAMOND 1"
+    "10":
+      message: "&c%player% е на 10 killstreak! Луд бонус!"
+      commands:
+        - "give %player% EMERALD 5"
+    "100":
+        message: "&4%player% е на 100 killstreak! НЕВЕРОЯТНО!"
+        commands:
+            - "give %player% DIAMOND_BLOCK 1"
+
+milestones:
+  enabled: true
+  rewards:
+    "15":
+      message: "&b%player% е достигнал 15 killstreak за първи път!"
+      commands:
+        - "give %player% GOLD_INGOT 5"
+    "50":
+      message: "&e%player% е достигнал 50 killstreak за първи път!"
+      commands:
+        - "give %player% DIAMOND 3"
+    "100":
+      message: "&d%player% е достигнал 100 killstreak за първи път! Легендарна награда!"
+      commands:
+        - "give %player% EMERALD_BLOCK 1"
+
+lost_streak_message:
+  enabled: true
+  message_self: "&cВие загубихте своя killstreak от %streak%!"
+  message_others: "&e%player% е загубил своя killstreak от %streak%!"
+
+hourly-rewards:
+  enabled: true
+
+  interval:
+    minutes: 30
+    hours: 0
+
+  message: "&6[Reward] &aВсеки получи hourly reward!"
+
+  commands:
+    - "give %player% diamond 1"
+    - "give %player% emerald 2"
+
+staffchat:
+  prefix: "&6[StaffChat] &f"
+
+spawn:
+  cooldown-seconds: 5
+  delay-seconds: 5
+
+
+enchanting:
+  villager-name: "&aEnchanting NPC"
+  gui-title: "&6Enchanting"
+  gui-button-name: "&bAttempt Upgrade"
+  use-armor: true
+  levels-cost: 30
+  chance-percent: 50
+  sounds:
+    success: "ENTITY_PLAYER_LEVELUP"
+    fail: "ENTITY_VILLAGER_NO"
+  messages:
+    no-armor: "&cYou need at least one Protection III armor piece."
+    no-levels: "&cYou need %levels% levels to upgrade."
+    success: "&aUpgrade successful! Upgraded %item% to Protection IV."
+    fail: "&cUpgrade failed!"
+
+
+discord:
+  # Primary invite URL; code will also check discord.invite as fallback
+  url: "https://discord.gg/AJXJ8KvV26"
+  invite: "https://discord.gg/AJXJ8KvV26"               # optional alternative key
+  title: "&bJoin our Discord!"
+  description: "&7Click the button below to join."
+  button-text: "&aOpen Invite"
+
+ss:
+  prefix: "&cScreenshare &f> "
+
+wand:
+  material: DIAMOND_AXE
+  name: "&cPvPBG Wand"
+  lore:
+    - "&7Left Click → First Corner"
+    - "&7Right Click → Second Corner"
+
+combat:
+  duration-seconds: 10
+
+messages:
+  wand-given: "&aYou received the PvPBG Wand!"
+  corner-1: "&eFirst corner set!"
+  corner-2: "&eSecond corner set!"
+  wall-created: "&aCombat wall activated!"
+  mark-corners: "&cYou must mark both corners first!"
+
+permissions:
+  wand-bypass: "pvpbg.anvil.rename.bypass"
+
+worlds:
+  - world
+  - world_nether
