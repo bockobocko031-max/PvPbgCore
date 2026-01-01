@@ -8,6 +8,7 @@ me\bobiyam\pvpbgcore\SpawnManager$1.class
 me\bobiyam\pvpbgcore\RewardManager.class
 me\bobiyam\pvpbgcore\Enchanting.class
 me\bobiyam\pvpbgcore\HourlyRewards.class
+me\bobiyam\pvpbgcore\PvPSystem.class
 me\bobiyam\pvpbgcore\SpawnManager.class
 me\bobiyam\pvpbgcore\AntiXrayListener.class
 me\bobiyam\pvpbgcore\EnchantingCommand.class

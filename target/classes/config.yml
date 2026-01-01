@@ -199,9 +199,160 @@ anti-swear:
     - damn
     - б*л
     - глупост
+    - idiot
+    - noob
+    - loser
+    - dumb
+    - stupid
+    - moron
+    - retard
+    - baka
+    - fail
+    - trash
+    - suck
+    - idiot123
+    - noobish
+    - baka123
+    - dumbass
+    - loser123
+    - fool
+    - silly
+    - weakling
+    - loserino
+    - derp
+    - lamer
+    - nooblet
+    - dunce
+    - dummy
+    - dimwit
+    - ignoramus
+    - nitwit
+    - foolio
+    - goofy
+    - knucklehead
+    - duncecap
+    - clutz
+    - doofus
+    - simpleton
+    - ignoramus
+    - dolt
+    - numbskull
+    - blockhead
+    - ignorante
+    - chump
+    - bumbler
+    - halfwit
+    - numb
+    - blunderer
+    - awkward
+    - spaz
+    - dingbat
+    - clod
+    - dork
+    - nerd
+    - geek
+    - dweeb
+    - loserino
+    - weak
+    - softie
+    - pansy
+    - sillyhead
+    - foolish
+    - sillyface
+    - wimp
+    - sap
+    - twit
+    - peabrain
+    - dope
+    - block
+    - slowpoke
+    - airhead
+    - nit
+    - bonehead
+    - loserface
+    - dunceface
+    - dumbface
+    - idiotface
+    - wussy
+    - goofball
+    - jerk
+    - jerkface
+    - twatwaffle
+    - loserfool
+    - numb
+    - saphead
+    - idiotbrain
+    - dumbbrain
+    - bumblerbrain
+    - goober
+    - dingus
+    - dunderhead
+    - duncehead
+    - looser
+    - dimhead
+    - sillybrain
+    - nitbrain
+    - foolbrain
+    - dummyhead
+    - dorkface
+    - geekface
+    - nerdface
+    - dweebface
+    - weakbrain
+    - wimpy
+    - clumsy
+    - blunderface
+    - awkwardface
+    - spazzy
+    - goof
+    - idiotboy
+    - idiothouse
+    - moronface
+    - foolboy
+    - sillyboy
+    - dumbboy
+    - dunceboy
+    - loserboy
+    - weakboy
+    - pansyface
+    - nitboy
+    - twitface
+    - dopeface
+    - peabrainboy
+    - knuckleheadboy
+    - airheadboy
+    - blockheadboy
+    - bumblerboy
+    - dumbdude
+    - foolishdude
+    - sillydude
+    - idiotdude
+    - loserduke
+    - goofydude
+    - nerdy
+    - geeky
+    - dweeby
+    - wimpyboy
+    - awkwarddude
+    - clumsyboy
+    - dimwitboy
+    - dingbatboy
+
   player-message: "&cWriting inappropriate words is forbidden!"
   staff-alert: "&4[AntiSwear] &c%player% wrote: &f%message%"
 
 # Права за staff
 permissionsc:
   staff: "pvpbgcore.staff"
+
+
+pvp-system:
+  enabled: true
+
+  worlds:
+    pvp-world: "PvPEvent"
+    spawn-world: "world"
+
+  messages:
+    inventory-cleared: "&cYour inventory has been cleared for the PvP Event."
+    inventory-restored: "&aYour inventory has been restored."

@@ -5,7 +5,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,18 +24,19 @@ public class PvPSystem implements Listener {
     }
 
     @EventHandler
-    public void onWorldChange(PlayerChangedWorldEvent event) {
+    public void onTeleport(PlayerTeleportEvent event) {
         Player player = event.getPlayer();
 
         if (!plugin.getConfig().getBoolean("pvp-system.enabled")) return;
 
+        World from = event.getFrom().getWorld();
+        World to = event.getTo().getWorld();
+        if (from == null || to == null) return;
+
         String pvpWorld = plugin.getConfig().getString("pvp-system.worlds.pvp-world");
         String spawnWorld = plugin.getConfig().getString("pvp-system.worlds.spawn-world");
 
-        World from = event.getFrom();
-        World to = player.getWorld();
-
-        // ВЛИЗА В PvP WORLD
+        // ➜ ВЛИЗА В PvP WORLD
         if (!from.getName().equalsIgnoreCase(pvpWorld)
                 && to.getName().equalsIgnoreCase(pvpWorld)) {
 
@@ -44,11 +45,13 @@ public class PvPSystem implements Listener {
             }
 
             player.getInventory().clear();
-            player.sendMessage(color(plugin.getConfig()
-                    .getString("pvp-system.messages.inventory-cleared")));
+            player.updateInventory();
+
+            send(player, "pvp-system.messages.inventory-cleared");
+            return;
         }
 
-        // ВРЪЩА СЕ В SPAWN WORLD
+        // ➜ ИЗЛИЗА ОТ PvP WORLD
         if (from.getName().equalsIgnoreCase(pvpWorld)
                 && to.getName().equalsIgnoreCase(spawnWorld)) {
 
@@ -56,14 +59,17 @@ public class PvPSystem implements Listener {
                 player.getInventory().clear();
                 player.getInventory().setContents(savedInventories.get(player.getUniqueId()));
                 savedInventories.remove(player.getUniqueId());
+                player.updateInventory();
             }
 
-            player.sendMessage(color(plugin.getConfig()
-                    .getString("pvp-system.messages.inventory-restored")));
+            send(player, "pvp-system.messages.inventory-restored");
         }
     }
 
-    private String color(String s) {
-        return s == null ? "" : s.replace("&", "§");
+    private void send(Player p, String path) {
+        String msg = plugin.getConfig().getString(path);
+        if (msg != null && !msg.isEmpty()) {
+            p.sendMessage(msg.replace("&", "§"));
+        }
     }
 }
