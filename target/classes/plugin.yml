@@ -50,9 +50,6 @@ commands:
   wand:
     description: Get the staff wand
     usage: /pvpbgcore wand
-  event:
-    description: Start an event
-    usage: /event <type>
 
 permissions:
   pvpbgcore.staffmode:
@@ -105,7 +102,4 @@ permissions:
     default: op
   pvpbgcore.wand:
     description: Use the wand
-    default: op
-  pvpbgcore.event:
-    description: Start events
     default: op
