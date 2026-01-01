@@ -162,3 +162,20 @@ anti-xray:
   alert-staff: true
   punish-on-flag: false
   flag-threshold: 8        # number of ores mined in a short time to flag
+
+
+anticheat:
+  enabled: true
+
+  reach:
+    enabled: true
+    max-distance: 4.5       # max блокове за удар
+    alert-staff: true
+    punish: false
+
+  autoclicker:
+    enabled: true
+    max-cps: 15             # удара в секунда
+    check-period-ticks: 20  # 1 секунда
+    alert-staff: true
+    punish: false
