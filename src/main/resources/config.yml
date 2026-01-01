@@ -157,3 +157,21 @@ permissions:
 worlds:
   - world
   - world_nether
+
+anti-xray:
+  enabled: true
+
+  fake-ores:
+    enabled: true
+    radius: 6
+    chance: 25 # % шанс stone да стане fake ore
+    blocks:
+      - DIAMOND_ORE
+      - EMERALD_ORE
+      - GOLD_ORE
+      - IRON_ORE
+
+  detection:
+    enabled: true
+    punish-on-flag: false
+    alert-staff: true
