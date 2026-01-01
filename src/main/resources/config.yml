@@ -179,7 +179,7 @@ anticheat:
     punish: false
 
   autoclicker:
-    enabled: true
+    enabled: false
     max-cps: 15
     check-period-ticks: 20
     alert-staff: true
