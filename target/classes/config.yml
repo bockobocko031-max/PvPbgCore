@@ -179,7 +179,7 @@ anticheat:
     punish: false
 
   autoclicker:
-    enabled: true
+    enabled: false
     max-cps: 15
     check-period-ticks: 20
     alert-staff: true
@@ -190,3 +190,18 @@ anticheat:
     max-hits-per-tick: 1
     alert-staff: true
     punish: false
+
+
+anti-swear:
+  blocked-words:
+    - shit
+    - fuck
+    - damn
+    - б*л
+    - глупост
+  player-message: "&cWriting inappropriate words is forbidden!"
+  staff-alert: "&4[AntiSwear] &c%player% wrote: &f%message%"
+
+# Права за staff
+permissionsc:
+  staff: "pvpbgcore.staff"

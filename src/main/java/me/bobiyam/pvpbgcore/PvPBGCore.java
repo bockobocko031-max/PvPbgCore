@@ -2,6 +2,7 @@ package me.bobiyam.pvpbgcore;
 
 import org.bukkit.*;
 import org.bukkit.command.Command;
+import me.bobiyam.pvpbgcore.AntiSwearManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -80,6 +81,8 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         }
 
         getLogger().info("Enchanting module registered.");
+        AntiSwearManager antiSwear = new AntiSwearManager(this);
+        getServer().getPluginManager().registerEvents(antiSwear, this);
         new StaffChatCommand(this);
         new SpawnManager(this);
         getCommand("staffmode").setExecutor(new StaffCommand());
