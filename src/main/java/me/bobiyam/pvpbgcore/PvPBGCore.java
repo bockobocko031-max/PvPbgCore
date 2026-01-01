@@ -69,6 +69,8 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
                 new AntiXrayListener(this), this
         );
 
+        Bukkit.getPluginManager().registerEvents(new AntiCheatListener(this), this);
+
 
         // register the command only if present in plugin.yml
         if (getCommand("spawnenchantnpc") != null) {
@@ -263,6 +265,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         prefix = ChatColor.translateAlternateColorCodes('&', cfg.getString("prefix", "&6[Server] &f"));
         rewardManager = new RewardManager(cfg); // презареждаме RewardManager с новата конфигурация
         hourlyRewards.reload();
+        Bukkit.getPluginManager().registerEvents(new AntiCheatListener(this), this);
         if (player != null)
             player.sendMessage(prefix + ChatColor.GREEN + "PvPBGCore configuration reloaded!");
     }

@@ -162,3 +162,31 @@ anti-xray:
   alert-staff: true
   punish-on-flag: false
   flag-threshold: 8        # number of ores mined in a short time to flag
+
+
+anticheat:
+  enabled: true
+
+  messages:
+    reach-flag: "&c[AntiCheat] {player} flagged for Reach at {x} {y} {z}!"
+    autoclicker-flag: "&c[AntiCheat] {player} flagged for AutoClicker at {x} {y} {z}!"
+    killaura-flag: "&c[AntiCheat] {player} flagged for KillAura at {x} {y} {z}!"
+
+  reach:
+    enabled: true
+    max-distance: 4.5
+    alert-staff: true
+    punish: false
+
+  autoclicker:
+    enabled: true
+    max-cps: 15
+    check-period-ticks: 20
+    alert-staff: true
+    punish: false
+
+  killaura:
+    enabled: true
+    max-hits-per-tick: 1
+    alert-staff: true
+    punish: false
