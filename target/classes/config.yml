@@ -134,13 +134,6 @@ discord:
 ss:
   prefix: "&cScreenshare &f> "
 
-wand:
-  material: DIAMOND_AXE
-  name: "&cPvPBG Wand"
-  lore:
-    - "&7Left Click → First Corner"
-    - "&7Right Click → Second Corner"
-
 combat:
   duration-seconds: 10
 

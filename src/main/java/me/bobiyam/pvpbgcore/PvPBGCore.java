@@ -65,8 +65,10 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         getCommand("ss").setExecutor(ssManager);
         getCommand("unss").setExecutor(ssManager);
 
-        FakeOreManager manager = new FakeOreManager(this);
-        Bukkit.getPluginManager().registerEvents(new AntiXrayFakeListener(manager), this);
+        Bukkit.getPluginManager().registerEvents(
+                new AntiXrayListener(this), this
+        );
+
 
         // register the command only if present in plugin.yml
         if (getCommand("spawnenchantnpc") != null) {

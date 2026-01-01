@@ -153,18 +153,12 @@ worlds:
 
 anti-xray:
   enabled: true
-
-  fake-ores:
-    enabled: true
-    radius: 6
-    chance: 25 # % шанс stone да стане fake ore
-    blocks:
-      - DIAMOND_ORE
-      - EMERALD_ORE
-      - GOLD_ORE
-      - IRON_ORE
-
-  detection:
-    enabled: true
-    punish-on-flag: false
-    alert-staff: true
+  tracked-blocks:
+    - DIAMOND_ORE
+    - EMERALD_ORE
+    - GOLD_ORE
+    - IRON_ORE
+  check-radius: 5          # how far a player can see and mine
+  alert-staff: true
+  punish-on-flag: false
+  flag-threshold: 8        # number of ores mined in a short time to flag
