@@ -93,6 +93,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         prefix = ChatColor.translateAlternateColorCodes('&', cfg.getString("prefix", "&6[Server] &f"));
         rewardManager = new RewardManager(cfg); // <- това трябва да е тук
         getServer().getPluginManager().registerEvents(this, this);
+        new PvPSystem(this);
     }
 
     @Override

@@ -344,3 +344,15 @@ anti-swear:
 # Права за staff
 permissionsc:
   staff: "pvpbgcore.staff"
+
+
+pvp-system:
+  enabled: true
+
+  worlds:
+    pvp-world: "PvPEvent"
+    spawn-world: "world"
+
+  messages:
+    inventory-cleared: "&cYour inventory has been cleared for the PvP Event."
+    inventory-restored: "&aYour inventory has been restored."
