@@ -82,6 +82,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
 
         getLogger().info("Enchanting module registered.");
         AntiSwearManager antiSwear = new AntiSwearManager(this);
+        new ReportCommand(this);
         getServer().getPluginManager().registerEvents(antiSwear, this);
         new StaffChatCommand(this);
         new SpawnManager(this);

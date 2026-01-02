@@ -368,7 +368,7 @@ command-blocker:
 
 
 report:
-  messages:
+  messagesb:
     usage: "&cUsage: &e/report <player> <reason>"
     reported: "&aYou have reported &6%player% &afor: &e%reason%"
     staff-alert: "&c[REPORT] &6%reporter% &creported &6%player% &cfor: &e%reason%"
