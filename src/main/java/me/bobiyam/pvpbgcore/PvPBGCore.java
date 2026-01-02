@@ -94,6 +94,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         rewardManager = new RewardManager(cfg); // <- това трябва да е тук
         getServer().getPluginManager().registerEvents(this, this);
         new PvPSystem(this);
+        new RenameChestBypasser(this);
     }
 
     @Override

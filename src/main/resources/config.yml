@@ -358,24 +358,13 @@ pvp-system:
     inventory-restored: "&aYour inventory has been restored."
 
 
-rename-bypass:
-  enabled: true
-  bypass-permission: "pvpbgcore.bypass"
-
+command-blocker:
   blocked-commands:
-    - "vulcan"
-    - "vulcan reload"
-    - "vulcan menu"
-    - "anticheat"
-    - "managechecks"
-
-  blocked-names:
-    - "vulcan"
-    - "vulcan anticheat"
-    - "manage checks"
-    - "checks"
-    - "anticheat"
-
+    - vulcan
+    - plugins
+    - pl
   messages:
-    kick-command: "&cSecurity Alert!\n&7Unauthorized command usage detected."
-    kick-rename: "&cSecurity Alert!\n&7Unauthorized item rename detected."
+    kick-command: "&cYou are not allowed to run this command!"
+
+
+
