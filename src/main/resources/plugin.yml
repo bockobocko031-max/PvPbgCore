@@ -50,6 +50,9 @@ commands:
   wand:
     description: Get the staff wand
     usage: /pvpbgcore wand
+  report:
+    description: Report a player to staff
+    usage: /report <player> <reason>
 
 permissions:
   pvpbgcore.staffmode:
@@ -103,3 +106,6 @@ permissions:
   pvpbgcore.wand:
     description: Use the wand
     default: op
+  pvpbgcore.report:
+    description: Use the report command
+    default: true
