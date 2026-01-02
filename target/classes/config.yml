@@ -356,3 +356,26 @@ pvp-system:
   messages:
     inventory-cleared: "&cYour inventory has been cleared for the PvP Event."
     inventory-restored: "&aYour inventory has been restored."
+
+
+rename-bypass:
+  enabled: true
+  bypass-permission: "pvpbgcore.bypass"
+
+  blocked-commands:
+    - "vulcan"
+    - "vulcan reload"
+    - "vulcan menu"
+    - "anticheat"
+    - "managechecks"
+
+  blocked-names:
+    - "vulcan"
+    - "vulcan anticheat"
+    - "manage checks"
+    - "checks"
+    - "anticheat"
+
+  messages:
+    kick-command: "&cSecurity Alert!\n&7Unauthorized command usage detected."
+    kick-rename: "&cSecurity Alert!\n&7Unauthorized item rename detected."
