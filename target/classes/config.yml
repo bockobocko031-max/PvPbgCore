@@ -368,10 +368,21 @@ command-blocker:
 
 
 report:
-  messagesb:
-    usage: "&cUsage: &e/report <player> <reason>"
-    reported: "&aYou have reported &6%player% &afor: &e%reason%"
-    staff-alert: "&c[REPORT] &6%reporter% &creported &6%player% &cfor: &e%reason%"
+  messages:
+    usage: "&cUsage: &f/report <player> <reason>"
+
+    reported: "&aYou reported &c%player% &afor: &f%reason%"
+
+    staff-alert:
+      - "&8━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&4&lPLAYER REPORT"
+      - "&8━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&7Reporter: &a%reporter%"
+      - "&7Reported: &c%player%"
+      - "&7Reason: &f%reason%"
+      - "&8━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+
 
 
 
