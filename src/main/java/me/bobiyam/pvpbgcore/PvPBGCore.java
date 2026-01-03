@@ -31,6 +31,9 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
     private RewardManager rewardManager;
     private String prefix;
     private HourlyRewards hourlyRewards;
+    // Task id for scheduled maintenance disable (if any)
+    private int maintenanceTaskId = -1;
+
     private final Map<UUID, UUID> tpaRequests = new HashMap<>();
     private final Map<UUID, GameMode> staffModes = new HashMap<>();
     private final Map<UUID, UUID> lastMessaged = new HashMap<>();
@@ -51,6 +54,21 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
     public void onEnable() {
         saveDefaultConfig();
         cfg = getConfig();
+        // If maintenance expiry is set and in the future, enable maintenance and schedule disable
+        long expiresAt = cfg.getLong("maintenance.expiresAt", 0L);
+        if (expiresAt > System.currentTimeMillis()) {
+            cfg.set("maintenance.enabled", true);
+            saveConfig();
+            scheduleMaintenanceDisable(expiresAt);
+            getLogger().info("Maintenance is active until " + new java.util.Date(expiresAt));
+            // MOTD is generated on ping by MaintenanceMotdListener (reads maintenance.expiresAt)
+        } else {
+            // Clean up stale expiresAt
+            if (expiresAt > 0) {
+                cfg.set("maintenance.expiresAt", 0L);
+                saveConfig();
+            }
+        }
         getCommand("customenchant").setExecutor(new me.bobiyam.pvpbgcore.CustomEnchantCommand(this));
         getCommand("discord").setExecutor(new me.bobiyam.pvpbgcore.DiscordCommand(this));
 
@@ -311,5 +329,65 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
                 }
             }
         }
+    }
+
+    // helper to format duration for PvPBGCore usage
+    private String formatDuration(long ms) {
+        if (ms <= 0) return "0s";
+        long days = java.util.concurrent.TimeUnit.MILLISECONDS.toDays(ms);
+        ms -= java.util.concurrent.TimeUnit.DAYS.toMillis(days);
+        long hours = java.util.concurrent.TimeUnit.MILLISECONDS.toHours(ms);
+        ms -= java.util.concurrent.TimeUnit.HOURS.toMillis(hours);
+        long minutes = java.util.concurrent.TimeUnit.MILLISECONDS.toMinutes(ms);
+        ms -= java.util.concurrent.TimeUnit.MINUTES.toMillis(minutes);
+        long seconds = java.util.concurrent.TimeUnit.MILLISECONDS.toSeconds(ms);
+        StringBuilder sb = new StringBuilder();
+        if (days > 0) sb.append(days).append("d");
+        if (hours > 0) sb.append(hours).append("h");
+        if (minutes > 0) sb.append(minutes).append("m");
+        if (seconds > 0) sb.append(seconds).append("s");
+        return sb.toString();
+    }
+
+    /**
+     * Schedule disabling maintenance at the given absolute epoch milliseconds time.
+     * Cancels any previously scheduled maintenance disable.
+     */
+    public void scheduleMaintenanceDisable(long expiresAt) {
+        // cancel previous task if exists
+        if (maintenanceTaskId != -1) {
+            Bukkit.getScheduler().cancelTask(maintenanceTaskId);
+            maintenanceTaskId = -1;
+        }
+
+        long now = System.currentTimeMillis();
+        long delayMillis = expiresAt - now;
+        if (delayMillis <= 0) {
+            // expire immediately
+            disableMaintenance();
+            return;
+        }
+
+        long ticks = Math.max(1L, delayMillis / 50L);
+        maintenanceTaskId = Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> {
+            disableMaintenance();
+        }, ticks);
+    }
+
+    public void cancelMaintenanceTask() {
+        if (maintenanceTaskId != -1) {
+            Bukkit.getScheduler().cancelTask(maintenanceTaskId);
+            maintenanceTaskId = -1;
+        }
+    }
+
+    private void disableMaintenance() {
+        cfg.set("maintenance.enabled", false);
+        cfg.set("maintenance.expiresAt", 0L);
+        saveConfig();
+        maintenanceTaskId = -1;
+        Bukkit.broadcastMessage(prefix + ChatColor.GREEN + "Maintenance has been automatically disabled.");
+        getLogger().info("Maintenance automatically disabled (expiry reached).");
+        // MOTD will be shown normally by MaintenanceMotdListener (reads maintenance.enabled)
     }
 }

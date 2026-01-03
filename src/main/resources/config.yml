@@ -399,10 +399,4 @@ motd:
   maintenance: |-
     &4&lPvP&a&lBulgaria &a- &4MAINTENANCE
     &7Server is temporarily offline
-
-
-
-
-
-
-
+    &7Remaining: %remaining%
