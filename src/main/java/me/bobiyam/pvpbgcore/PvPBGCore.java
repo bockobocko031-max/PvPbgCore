@@ -272,6 +272,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         rewardManager = new RewardManager(cfg); // презареждаме RewardManager с новата конфигурация
         hourlyRewards.reload();
         Bukkit.getPluginManager().registerEvents(new AntiCheatListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new PvPSystem(this), this);
         if (player != null)
             player.sendMessage(prefix + ChatColor.GREEN + "PvPBGCore configuration reloaded!");
     }
