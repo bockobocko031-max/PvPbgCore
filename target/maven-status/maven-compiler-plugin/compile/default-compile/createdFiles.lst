@@ -1,3 +1,4 @@
+me\bobiyam\pvpbgcore\HackWatcher.class
 me\bobiyam\pvpbgcore\StaffChatCommand.class
 me\bobiyam\pvpbgcore\DiscordCommand.class
 me\bobiyam\pvpbgcore\SpawnManager$1.class
@@ -7,7 +8,6 @@ me\bobiyam\pvpbgcore\HourlyRewards.class
 me\bobiyam\pvpbgcore\PvPSystem.class
 me\bobiyam\pvpbgcore\ReportCommand.class
 me\bobiyam\pvpbgcore\SpawnManager.class
-me\bobiyam\pvpbgcore\AntiXrayListener.class
 me\bobiyam\pvpbgcore\EnchantingCommand.class
 me\bobiyam\pvpbgcore\Enchanting$Found.class
 me\bobiyam\pvpbgcore\EnchantingListener.class
@@ -19,6 +19,7 @@ me\bobiyam\pvpbgcore\CustomEnchantCommand.class
 me\bobiyam\pvpbgcore\ScreenshareManager.class
 me\bobiyam\pvpbgcore\MaintenanceCommand.class
 me\bobiyam\pvpbgcore\Enchanting.class
+me\bobiyam\pvpbgcore\MaintenanceMotdListener.class
 me\bobiyam\pvpbgcore\MaintenanceListener.class
 me\bobiyam\pvpbgcore\PvPBGCore.class
 me\bobiyam\pvpbgcore\HourlyRewards$1.class

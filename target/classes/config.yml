@@ -360,7 +360,7 @@ pvp-system:
 
 command-blocker:
   blocked-commands:
-    - vulcan
+#    - vulcan
     - plugins
     - pl
   messages:
@@ -384,15 +384,21 @@ report:
 
 maintenance:
   enabled: false
-
   kick-message: |
     &8&m-------------------------------------------------------
-               &c&lMaintenance
-    
-    &7The server is undergoing maintenance.
-    &7Please try again later!
-    
+              &c&lMaintenance Mode
+
+    &7The server is currently under maintenance.
+    &7Please try again later.
+
     &8&m-------------------------------------------------------
+motd:
+  normal: |-
+    &4&lPvP&a&lBulgaria &a- &f&lONLINE: &a&lDNES 18-20 H.
+    &f&ldiscord.gg/M5s8ZKe
+  maintenance: |-
+    &4&lPvP&a&lBulgaria &a- &4MAINTENANCE
+    &7Server is temporarily offline
 
 
 

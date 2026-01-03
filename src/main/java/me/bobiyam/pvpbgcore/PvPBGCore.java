@@ -57,6 +57,7 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         // Register listener for GUI
         getServer().getPluginManager().registerEvents(new EnchantingListener(this), this);
         getServer().getPluginManager().registerEvents(new EnchantingListener(this), this);
+        getServer().getPluginManager().registerEvents(new HackWatcher(this), this);
 
         ScreenshareManager ssManager = new ScreenshareManager(this);
 
@@ -66,9 +67,6 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         getCommand("ss").setExecutor(ssManager);
         getCommand("unss").setExecutor(ssManager);
 
-        Bukkit.getPluginManager().registerEvents(
-                new AntiXrayListener(this), this
-        );
 
         new MaintenanceCommand(this);
 
