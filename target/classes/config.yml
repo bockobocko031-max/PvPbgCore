@@ -382,6 +382,19 @@ report:
       - "&7Reason: &f%reason%"
       - "&8━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
+maintenance:
+  enabled: false
+
+  kick-message: |
+    &8&m-------------------------------------------------------
+               &c&lMaintenance
+    
+    &7The server is undergoing maintenance.
+    &7Please try again later!
+    
+    &8&m-------------------------------------------------------
+
+
 
 
 

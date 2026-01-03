@@ -387,12 +387,16 @@ maintenance:
 
   kick-message: |
     &8&m-------------------------------------------------------
-               &c&lMaintenance
+              &c&lMaintenance Mode
     
-    &7The server is undergoing maintenance.
-    &7Please try again later!
+    &7The server is currently under maintenance.
+    &7Please try again later.
     
     &8&m-------------------------------------------------------
+
+motd:
+  normal: "&aPvPBG &8| &fOnline &7» &aPlay Now!"
+  maintenance: "&cPvPBG &8| &4MAINTENANCE\n&7Server is temporarily offline"
 
 
 

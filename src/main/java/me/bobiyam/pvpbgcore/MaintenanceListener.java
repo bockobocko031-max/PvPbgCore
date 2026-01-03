@@ -18,7 +18,6 @@ public class MaintenanceListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
 
         if (!plugin.getConfig().getBoolean("maintenance.enabled")) return;
-
         if (e.getPlayer().hasPermission("maintenance.bypass")) return;
 
         String kickMessage = plugin.getConfig().getString("maintenance.kick-message");

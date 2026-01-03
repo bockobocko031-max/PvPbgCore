@@ -71,9 +71,9 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
         );
 
         new MaintenanceCommand(this);
-        getServer().getPluginManager().registerEvents(
-                new MaintenanceListener(this), this
-        );
+
+        getServer().getPluginManager().registerEvents(new MaintenanceListener(this), this);
+        getServer().getPluginManager().registerEvents(new MaintenanceMotdListener(this), this);
 
         Bukkit.getPluginManager().registerEvents(new AntiCheatListener(this), this);
 

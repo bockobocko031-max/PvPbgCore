@@ -17,7 +17,9 @@ me\bobiyam\pvpbgcore\StaffCommand.class
 me\bobiyam\pvpbgcore\AntiSwearManager.class
 me\bobiyam\pvpbgcore\CustomEnchantCommand.class
 me\bobiyam\pvpbgcore\ScreenshareManager.class
+me\bobiyam\pvpbgcore\MaintenanceCommand.class
 me\bobiyam\pvpbgcore\Enchanting.class
+me\bobiyam\pvpbgcore\MaintenanceListener.class
 me\bobiyam\pvpbgcore\PvPBGCore.class
 me\bobiyam\pvpbgcore\HourlyRewards$1.class
 me\bobiyam\pvpbgcore\PlayerDeathListener.class

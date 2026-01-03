@@ -53,6 +53,9 @@ commands:
   report:
     description: Report a player to staff
     usage: /report <player> <reason>
+  maintenance:
+    description: Toggle server maintenance mode
+    usage: /maintenance
 
 permissions:
   pvpbgcore.staffmode:
@@ -109,3 +112,6 @@ permissions:
   pvpbgcore.report:
     description: Use the report command
     default: true
+  pvpbgcore.maintenance:
+    description: Bypass maintenance
+    default: op
