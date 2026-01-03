@@ -70,6 +70,11 @@ public final class PvPBGCore extends JavaPlugin implements Listener {
                 new AntiXrayListener(this), this
         );
 
+        new MaintenanceCommand(this);
+        getServer().getPluginManager().registerEvents(
+                new MaintenanceListener(this), this
+        );
+
         Bukkit.getPluginManager().registerEvents(new AntiCheatListener(this), this);
 
 
